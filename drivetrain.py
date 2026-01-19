@@ -8,52 +8,6 @@ import matplotlib.pyplot as plt
 
 MAX_DISTANCE = 50  # ft
 
-
-def main():
-    dcf = DrivetrainComparisonFactory(voltage_bat=12)
-
-    plot_drivetrains(
-            dcf.create(
-                mass=(130, 80),
-                motor='CIM',
-                num_motors=4,
-                gear_ratio=(10, 13),
-                resistance_bat=0.025,
-                current_limit=400
-            ),
-            max_feet=MAX_DISTANCE
-        )
-
-    # # plot without current limit
-    # plot_drivetrains(
-    #         dcf.create(
-    #             mass=(130, 80),
-    #             motor='CIM',
-    #             num_motors=4,
-    #             gear_ratio=(10, 13),
-    #             current_limit=400
-    #         ),
-    #         max_feet=MAX_DISTANCE
-    #     )
-
-    # # plot current comparison
-    # plot_drivetrains(
-    #         dcf.create(
-    #             mass=130,
-    #             motor='CIM',
-    #             num_motors=4,
-    #             gear_ratio=(10, 13),
-    #             resistance_bat=0.025,
-    #             current_limit=(200, None)
-    #         ),
-    #         max_feet=MAX_DISTANCE
-    #     )
-
-    # plot_comparison('775pro')
-
-    plt.show()
-
-
 def plot_comparison(comparison):
     plot_drivetrains(
             [
